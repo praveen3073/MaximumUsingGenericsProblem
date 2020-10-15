@@ -39,4 +39,22 @@ public class MaximumUsingGenericsTest {
         float result = MaximumUsingGenerics.findMaxFloat(new Float[]{9.0f, 3.0f, 11.0f});
         Assert.assertEquals(11.0, result, 0.0);
     }
+
+    @Test
+    public void given3Strings_WhenMaxAtIndex0_ReturnTrue() {
+        String result = MaximumUsingGenerics.findMaxString(new String[]{"Peach", "Apple", "Banana"});
+        Assert.assertEquals("Peach", result);
+    }
+
+    @Test
+    public void given3Strings_WhenMaxAtIndex1_ReturnTrue() {
+        String result = MaximumUsingGenerics.findMaxString(new String[]{"Apple", "Peach", "Banana"});
+        Assert.assertEquals("Peach", result);
+    }
+
+    @Test
+    public void given3Strings_WhenMaxAtIndex2_ReturnTrue() {
+        String result = MaximumUsingGenerics.findMaxString(new String[]{"Banana", "Apple", "Peach"});
+        Assert.assertEquals("Peach", result);
+    }
 }
