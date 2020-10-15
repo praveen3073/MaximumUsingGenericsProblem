@@ -14,4 +14,9 @@ public class MaximumUsingGenericsTest {
         int result = MaximumUsingGenerics.findMaxInteger(new Integer[]{3,11,9});
         Assert.assertEquals(11, result);
     }
+    @Test
+    public void given3Integers_WhenMaxAtIndex2_ReturnTrue() {
+        int result = MaximumUsingGenerics.findMaxInteger(new Integer[]{9,3,11});
+        Assert.assertEquals(11, result);
+    }
 }
