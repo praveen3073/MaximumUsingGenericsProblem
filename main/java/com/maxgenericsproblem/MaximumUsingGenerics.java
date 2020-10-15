@@ -13,7 +13,7 @@ public class MaximumUsingGenerics {
         }
         System.out.println("Maximum interger: " + findMaxInteger(intArray));
     }
-    private static Integer findMaxInteger(Integer[] intArray) {
+    protected static Integer findMaxInteger(Integer[] intArray) {
         Integer max = intArray[0].compareTo(intArray[1])>0 ? intArray[0] : intArray[1];
         return max.compareTo(intArray[2])>0 ? max : intArray[2];
     }
