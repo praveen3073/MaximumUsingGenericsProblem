@@ -12,7 +12,12 @@ class MaxTestInput<E extends Comparable<E>> {
     }
 
     public E testMaximum() {
-        return MaximumUsingGenerics.findMax(array);
+        E max = MaximumUsingGenerics.findMax(array);
+        printMax(max);
+        return max;
+    }
+    private void printMax(E max) {
+        System.out.println("Maximum in " + Arrays.toString(array) + " is: " + max);
     }
 }
 
@@ -23,17 +28,17 @@ public class MaximumUsingGenerics {
         //Max of three Integers
         Integer[] intArray = new Integer[]{13, 65, 47, 66};
         MaxTestInput<Integer> intInput = new MaxTestInput<>(intArray);
-        System.out.println("Maximum integer " + Arrays.toString(intArray) + ": " + intInput.testMaximum());
+        intInput.testMaximum();
 
         //Max of three Floats
         Float[] floatArray = new Float[]{6.5f, 4.3f, 8.8f, 5.5f};
         MaxTestInput<Float> floatInput = new MaxTestInput<>(floatArray);
-        System.out.println("Maximum float of " + Arrays.toString(floatArray) + ": " + floatInput.testMaximum());
+        floatInput.testMaximum();
 
         //Max of three Strings
         String[] stringArray = new String[]{"Chennai", "Kolkata", "Delhi", "Tamil Nadu"};
         MaxTestInput<String> stringInput = new MaxTestInput<>(stringArray);
-        System.out.println("Maximum string of " + Arrays.toString(stringArray) + ": " + stringInput.testMaximum());
+        stringInput.testMaximum();
     }
 
     protected static <E extends Comparable<E>> E findMax(E[] array) {
